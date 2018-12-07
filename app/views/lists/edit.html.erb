@@ -1,0 +1,7 @@
+<h1>Editing List</h1>
+
+<%= render 'form' %>
+<%= render partial: './partials/imdb_search', locals:{list_id: @list.id, new: false, movies: nil} %>
+
+<%= link_to 'Show', @list %> |
+<%= link_to 'Back', lists_path %>

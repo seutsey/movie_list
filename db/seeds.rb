@@ -1,0 +1,5 @@
+RatingScale.create(stars: 1, description: 'Worst')
+RatingScale.create(stars: 2, description: 'Bad')
+RatingScale.create(stars: 3, description: 'OK')
+RatingScale.create(stars: 4, description: 'Better')
+RatingScale.create(stars: 5, description: 'Best')

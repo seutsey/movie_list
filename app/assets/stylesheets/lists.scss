@@ -1,0 +1,32 @@
+// Place all the styles related to the Lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.scrollable {
+    width: 800px;
+    height: 300px;
+    overflow: scroll;
+}
+
+// thead,
+// tbody {
+//     display: block;
+// }
+tbody {
+    height: 300px;
+    width: 800px;
+    /* Just for the demo          */
+    overflow-y: auto;
+    /* Trigger vertical scroll    */
+    overflow-x: hidden;
+    /* Hide the horizontal scroll */
+}
+
+.center {
+    padding: 0px 5px 0px 5px;
+    text-align: center;
+}
+
+.left {
+    padding: 0px 5px 0px 5px;
+    text-align: left;
+}

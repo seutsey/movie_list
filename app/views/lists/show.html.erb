@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %> |
+<%= link_to 'Home', root_path %>
+
+<h3>
+  <strong>List Name:</strong>
+  <%= @list.name %>
+</h3>
+  <table>
+    <tr>
+      <th class="left">Title</th>
+      <th>Release Date</th>
+      <th>Rating</th>
+    </tr>
+    <% @list_movies.each do |list_movie| %>
+      <% unless list_movie.nil? %>
+        <%= simple_form_for(list_movie.movie) do |f| %>
+          <%= f.input :list_id, as: :hidden, input_html: {value: @list.id} %>
+          <tr>
+            <td class="left"><%= list_movie.movie.title %></td>
+            <td><%= list_movie.movie.release_date.strftime("%m/%d/%Y") %></td>
+            <td><%= f.select :rating, @star_list, {}, onChange: ("javascript: this.form.submit();") %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  </table>
+<br><br>
+<%= render partial: './partials/imdb_search', locals:{list_id: @list.id, new: false, movies: nil} %>
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %> |
+<%= link_to 'Home', root_path %>
